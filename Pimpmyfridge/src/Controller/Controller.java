@@ -1,5 +1,5 @@
 package Controller;
 
-public class fff {
+public class Controller {
 
 }
