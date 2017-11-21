@@ -1,0 +1,51 @@
+package View;
+
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RefineryUtilities;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+
+public class Frame extends ApplicationFrame
+{
+   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8907207001630426617L;
+public Frame ( String applicationTitle , String chartTitle )
+   {
+      super(applicationTitle);
+      JFreeChart lineChart = ChartFactory.createLineChart(
+         chartTitle,
+         "Temps","Température",
+         createDataset(),
+         PlotOrientation.VERTICAL,
+         true,true,false);
+         
+      ChartPanel chartPanel = new ChartPanel( lineChart );
+      chartPanel.setPreferredSize( new java.awt.Dimension( 760 , 567 ) );
+      setContentPane( chartPanel );
+   }
+
+   private DefaultCategoryDataset createDataset( )
+   {
+      DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+      dataset.addValue( 100 , "Frigo" , "0" );
+      dataset.addValue( 60 , "Frigo" ,  "15" );
+      dataset.addValue( 30 , "Frigo" , "30" );
+      dataset.addValue( 0 , "Frigo" , "45" );
+      return dataset;
+   }
+   public static void main( String[ ] args ) 
+   {
+      AppFrame chart = new AppFrame(
+      "Fridge" ,
+      "Température en fonction du temps");
+
+      chart.pack( );
+      RefineryUtilities.centerFrameOnScreen( chart );
+      chart.setVisible( true );
+   }
+}

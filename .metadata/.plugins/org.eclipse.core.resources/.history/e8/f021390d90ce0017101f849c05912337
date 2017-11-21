@@ -1,0 +1,43 @@
+package View;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import org.jfree.ui.RefineryUtilities;
+
+public class FrameView {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	 public static void main( String[ ] args ) 
+	   {
+	      Frame chart = new Frame(
+	      "Fridge" ,
+	      "Température en fonction du temps");
+
+	      chart.pack( );
+	      RefineryUtilities.centerFrameOnScreen( chart );
+	      chart.setVisible( true );
+	   }
+
+	/**
+	 * Create the application.
+	 */
+	public FrameView() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}
