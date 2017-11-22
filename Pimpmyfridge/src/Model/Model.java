@@ -9,22 +9,21 @@ public class Model extends Observable {
 	private int time;
 	private int humidity;	
 	private int ptrose;
-	private ArrayList tabObserver;
+	private ArrayList<Observer> tabObserver;
 
 public Model(){
 	temp=10;
 	time=20;
 	humidity=40;
 	ptrose=5;
-	tabObserver=new ArrayList();
+	tabObserver=new ArrayList<Observer>();
 }
 public void addObserver(Observer o){
 	tabObserver.add(o);
 }
 
-public void deleteObserver(Observer o)
-{
-        tabObserver.remove(o);              
+public void deleteObserver(Observer o){
+    tabObserver.remove(o);              
 }
 
 public void notifyObserver(){

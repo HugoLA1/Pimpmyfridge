@@ -15,7 +15,6 @@ public class main {
 		FrameView obs = new FrameView();
 		m.addObserver(obs);
 		m.setMesures(10, 30, 60, 5);
-		obs.update(obs, obj);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
