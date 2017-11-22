@@ -5,12 +5,13 @@ import java.awt.EventQueue;
 import View.FrameView;
 import Model.Model;
 
-public class main {
-	/*
-	  Launch the application
-	 */
+public class Main {
+
 
 	public static void main(String[] args) {
+		
+		
+		
 		Model m = new Model();
 		FrameView obs = new FrameView();
 		m.addObserver(obs);
@@ -25,5 +26,8 @@ public class main {
 				}
 			}
 		});
+		
+		
+		
 	}
 }
