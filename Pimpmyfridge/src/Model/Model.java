@@ -17,6 +17,9 @@ public Model(){
 	humidity=40;
 	ptrose=5;
 	tabObserver=new ArrayList<Observer>();
+	
+	
+	
 }
 public void addObserver(Observer o){
 	tabObserver.add(o);
