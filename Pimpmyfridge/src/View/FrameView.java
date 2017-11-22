@@ -2,6 +2,8 @@ package View;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -37,6 +39,20 @@ public class FrameView implements Observer {
 	int hum;
 	int ptrose;
 	public JFrame frame;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrameView window = new FrameView();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
 	/*
 	  Create the application.
 	 */
