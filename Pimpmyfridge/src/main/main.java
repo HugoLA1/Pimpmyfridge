@@ -3,12 +3,19 @@ package main;
 import java.awt.EventQueue;
 
 import View.FrameView;
+import Model.Model;
 
 public class main {
-	/**
-	 * Launch the application
+	/*
+	  Launch the application
 	 */
+
 	public static void main(String[] args) {
+		Model m = new Model();
+		FrameView obs = new FrameView();
+		m.addObserver(obs);
+		m.setMesures(10, 30, 60, 5);
+		obs.update(obs, obj);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

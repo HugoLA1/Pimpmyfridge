@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;Controller.fff&apos; to &apos;Controller&apos;&#x0D;&#x0A;- Original project: &apos;Pimpmyfridge&apos;&#x0D;&#x0A;- Original element: &apos;Controller.fff&apos;&#x0D;&#x0A;- Renamed element: &apos;Controller.Controller&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;fff&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Controller{fff.java[fff" matchStrategy="1" name="Controller" qualified="false" references="true" similarDeclarations="false" stamp="1510914765156" textual="false" version="1.0"/>
-</session>
