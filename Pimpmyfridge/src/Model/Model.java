@@ -1,61 +1,28 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+import Model.Communication;
+import Model.Connection;
 
-public class Model extends Observable {
-	private int temp;
-	private int time;
-	private int humidity;	
-	private int ptrose;
-	private ArrayList<Observer> tabObserver;
+import java.io.BufferedReader;
+import java.io.OutputStream;
 
-public Model(){
-	temp=10;
-	time=20;
-	humidity=40;
-	ptrose=5;
-	tabObserver=new ArrayList<Observer>();
+public class Model{
+
+	public Connection connection;
+    public Communication communication;
+
+    public Model() {
+        this.connection = new Connection();
+    }
+
+    public void runModel() {
+
+        this.connection.openPort(connection.searchForPorts());
+        this.communication = new Communication(this.connection.getInput(), this.connection.getOutput());
+        this.connection.addSerialListener(this.communication);
+    }
+}
 	
 	
 	
-}
-public void addObserver(Observer o){
-	tabObserver.add(o);
-}
-
-public void deleteObserver(Observer o){
-    tabObserver.remove(o);              
-}
-
-public void notifyObserver(){
-	setChanged();
-	notifyObservers();
-}
-
-public void setMesures(int temp, int time, int humidity, int ptrose){
-	this.temp=temp;
-	this.time=time;
-	this.humidity=humidity;
-	this.ptrose=ptrose;
-	notifyObserver();
-}
-
-public int getTemp() {
-	return temp;
-}
-
-public int getTime() {
-	return time;
-}
-
-public int getHumidity() {
-	return humidity;
-}
-
-public int getPtrose() {
-	return ptrose;
-}
-
-}
+	

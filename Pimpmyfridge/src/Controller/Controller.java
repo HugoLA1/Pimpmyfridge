@@ -12,7 +12,8 @@ public class Controller {
 		
 		this.model = new Model();
 		this.frameView = new FrameView();
-		this.model.addObserver(this.frameView);
+		this.model.addObserver(this.frameView);		
+		
 		
 	}
 	
