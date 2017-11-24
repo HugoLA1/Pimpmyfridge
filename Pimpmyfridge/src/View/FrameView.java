@@ -42,6 +42,7 @@ public class FrameView implements Observer {
 	JLabel lblTextHumidity;
 	JLabel lblWarningDewYes;
 	JLabel lblWarningDewNo;
+	JLabel lblTextCondensation;
 
 	JButton btnNewButton;
 
@@ -64,7 +65,7 @@ public class FrameView implements Observer {
 
 			if (Double.parseDouble(stringValues[0]) < Double.parseDouble(stringValues[2])){
 				lblWarningDewNo.setIcon(new ImageIcon(FrameView.class.getResource("/View/False.png")));
-				lblWarningDewNo.setBounds(112, 100, 207, 198);
+				lblWarningDewNo.setBounds(137, 126, 207, 198);
 				frame.getContentPane().add(lblWarningDewNo);
 				lblWarningDewYes.setVisible( false );
 			}
@@ -108,7 +109,7 @@ public class FrameView implements Observer {
 
 		this.lblWarningDewYes = new JLabel("");
 		lblWarningDewYes.setIcon(new ImageIcon(FrameView.class.getResource("/View/True.png")));
-		lblWarningDewYes.setBounds(112, 116, 171, 171);
+		lblWarningDewYes.setBounds(137, 126, 171, 171);
 		frame.getContentPane().add(lblWarningDewYes);
 
 		this.lblWarningDewNo = new JLabel("");
@@ -126,6 +127,13 @@ public class FrameView implements Observer {
 		btnNewButton.setIcon(new ImageIcon(FrameView.class.getResource("/View/+.PNG")));
 		btnNewButton.setBounds(908, 365, 32, 31);
 		frame.getContentPane().add(btnNewButton);
+		
+
+		this.lblTextCondensation = new JLabel("Check Condensation ");
+		lblTextCondensation.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblTextCondensation.setForeground(Color.WHITE);
+		lblTextCondensation.setBounds(63, 100, 287, 37);
+		frame.getContentPane().add(lblTextCondensation);	
 
 		this.lblTextHumidity = new JLabel("Taux d'humidit\u00E9");
 		lblTextHumidity.setForeground(Color.WHITE);
@@ -137,18 +145,18 @@ public class FrameView implements Observer {
 		lblTextTemperature.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblTextTemperature.setForeground(Color.WHITE);
 		lblTextTemperature.setBounds(413, 100, 187, 37);
-		frame.getContentPane().add(lblTextTemperature);		      
+		frame.getContentPane().add(lblTextTemperature);		
 
 		this.lblTemperature = new JLabel("0" +"°");
 		lblTemperature.setFont(new Font("Tw Cen MT", Font.PLAIN, 90));
 		lblTemperature.setForeground(Color.WHITE);
-		lblTemperature.setBounds(443, 144, 136, 143);
+		lblTemperature.setBounds(383, 144, 266, 143);
 		frame.getContentPane().add(lblTemperature);
 
 		this.lblHumidity = new JLabel("0" +"%");
 		lblHumidity.setFont(new Font("Tw Cen MT", Font.PLAIN, 90));
 		lblHumidity.setForeground(Color.WHITE);
-		lblHumidity.setBounds(708, 144, 175, 143);
+		lblHumidity.setBounds(688, 144, 275, 143);
 		frame.getContentPane().add(lblHumidity);
 		frame.getContentPane().add( chartPanel );
 		chartPanel.setBorder(UIManager.getBorder("TextField.border"));
