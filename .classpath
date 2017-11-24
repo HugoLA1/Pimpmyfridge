@@ -14,6 +14,6 @@
 	<classpathentry kind="lib" path="C:/Users/Logan/Desktop/jfreechart-1.0.19/lib/orsonpdf-1.6-eval.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Logan/Desktop/jfreechart-1.0.19/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Logan/Desktop/jfreechart-1.0.19/lib/swtgraphics2d.jar"/>
-	<classpathentry kind="lib" path="C:/Users/kosta/Documents/GitHub/Pmf/Pimpmyfridge/Pimpmyfridge/lib/RXTXcomm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Logan/Desktop/RXTXcomm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

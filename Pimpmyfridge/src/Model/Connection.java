@@ -1,14 +1,19 @@
 package Model;
 
 
-import gnu.io.*;
 import java.io.*;
 import java.util.Enumeration;
 import java.util.TooManyListenersException;
 
+import gnu.io.CommPortIdentifier;
+import gnu.io.PortInUseException;
+import gnu.io.SerialPort;
+import gnu.io.SerialPortEventListener;
+import gnu.io.UnsupportedCommOperationException;
+
 public class Connection {
 
-	private Enumeration ports = null;
+	private Enumeration<?> ports = null;
 	private SerialPort serialPort = null;
 
 	public OutputStream getOutput() {
@@ -43,7 +48,6 @@ public class Connection {
 	}
 
 	public void openPort(CommPortIdentifier port) {
-
 		try {
 			serialPort = (SerialPort) port.open(this.getClass().getName(), TIMEOUT);
 			serialPort.setSerialPortParams(DATA_RATE, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
@@ -52,10 +56,10 @@ public class Connection {
 			System.out.println("Port openned");
 			System.out.println("The port is:"+ serialPort);
 			this.serialPort.notifyOnDataAvailable(true);
+
 		} catch (PortInUseException | UnsupportedCommOperationException | IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void addSerialListener(SerialPortEventListener listener) {
@@ -65,5 +69,4 @@ public class Connection {
 			e.printStackTrace();
 		}
 	}
-
 }

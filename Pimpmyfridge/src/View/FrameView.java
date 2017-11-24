@@ -9,8 +9,7 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries; 
 import org.jfree.data.xy.XYSeriesCollection;
 
-import Model.Model;
-
+import Model.Communication;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
 import java.awt.Toolkit;
@@ -19,8 +18,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.EventQueue;
-
 import java.util.Observable;
 import java.util.Observer;
 
@@ -53,18 +50,19 @@ public class FrameView implements Observer {
 	XYSeriesCollection datasetCollection;
 
 	@Override
-	public void update(Observable o, Object obj) {
-		if(o instanceof Model)
+	public void update(Observable o, Object values) {
+		if(o instanceof Communication)
 		{
-			Model model = (Model) o;
+			
+			String[] stringValues = (String[])values;
 
-			graphicTemperature.add(model.getTime(), model.getTemp());
-			graphicHumidity.add(model.getTime(), model.getHumidity());
+			graphicTemperature.add(Double.parseDouble(stringValues[3]), Double.parseDouble(stringValues[0]));
+			graphicHumidity.add(Double.parseDouble(stringValues[3]), Double.parseDouble(stringValues[1]));
 
-			lblHumidity.setText(model.getHumidity() +"%");
-			lblTemperature.setText(model.getTemp() + "°");
+			lblHumidity.setText(Double.parseDouble(stringValues[1]) +"%");
+			lblTemperature.setText(Double.parseDouble(stringValues[0]) + "°");
 
-			if (model.getTemp() < model.getPtrose()){
+			if (Double.parseDouble(stringValues[0]) < Double.parseDouble(stringValues[2])){
 				lblWarningDewNo.setIcon(new ImageIcon(FrameView.class.getResource("/View/False.png")));
 				lblWarningDewNo.setBounds(112, 100, 207, 198);
 				frame.getContentPane().add(lblWarningDewNo);

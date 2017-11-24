@@ -8,19 +8,11 @@ public class Controller {
 	Model model;
 	FrameView frameView;
 	
-	public Controller() {
+	public Controller(){
 		
 		this.model = new Model();
 		this.frameView = new FrameView();
-		this.model.addObserver(this.frameView);		
-		
-		
-	}
-	
-	public void Run() {
-		while(true) {
-			
-		}
+		this.model.communication.addObserver(this.frameView);		
 			
 	}
 }

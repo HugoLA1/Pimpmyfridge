@@ -46,5 +46,4 @@ public class Communication extends Observable implements SerialPortEventListener
             e.printStackTrace();
         }
     }
-	
 }
