@@ -26,6 +26,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
@@ -43,6 +44,7 @@ public class FrameView implements Observer {
 	JLabel lblWarningDewYes;
 	JLabel lblWarningDewNo;
 	JLabel lblTextCondensation;
+	JTextField textField;
 
 	JButton btnNewButton;
 
@@ -128,7 +130,11 @@ public class FrameView implements Observer {
 		btnNewButton.setBounds(908, 365, 32, 31);
 		frame.getContentPane().add(btnNewButton);
 		
-
+		this.textField = new JTextField();
+		textField.setBounds(480, 320, 30, 30);
+		frame.getContentPane().add(textField);
+		textField.setColumns(2);
+		
 		this.lblTextCondensation = new JLabel("Check Condensation ");
 		lblTextCondensation.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblTextCondensation.setForeground(Color.WHITE);
